@@ -16,8 +16,9 @@ import { ProductSearchComponent } from './components/product-search/product-sear
 import { ProductAllComponent } from './components/product-all/product-all.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { BagComponent } from './components/bag/bag.component';
+import { CartComponent } from './components/cart/cart.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NotfoundComponent, ProductListComponent, ProductSearchComponent, ProductAllComponent, ProductDetailComponent, BagComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, NotfoundComponent, ProductListComponent, ProductSearchComponent, ProductAllComponent, ProductDetailComponent, BagComponent, CartComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
     {

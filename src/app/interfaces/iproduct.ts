@@ -5,6 +5,7 @@ export interface IProduct {
   name:string,
   cover:string,
   description:string,
-  price:string,
-  category:ICategory
+  price:number,
+  category:ICategory,
+  quantity:number
 }

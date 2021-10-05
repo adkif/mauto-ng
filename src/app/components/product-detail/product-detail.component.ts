@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { CartService } from 'src/app/cart.service';
 import { IProduct } from 'src/app/interfaces/iproduct';
 import { RestService } from 'src/app/rest.service';
 
@@ -12,13 +13,17 @@ import { RestService } from 'src/app/rest.service';
 export class ProductDetailComponent implements OnInit {
   APIURIPRODUCT = 'https://api-m-auto.herokuapp.com/api/products/'
   product: any;
-  constructor(private route: ActivatedRoute, private rest: RestService<IProduct>) { }
+  constructor(private router: Router,private route: ActivatedRoute, private rest: RestService<IProduct>, private cartService: CartService) {this.router.routeReuseStrategy.shouldReuseRoute = () => false; }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params.productId
     this.rest.getOne(this.APIURIPRODUCT+id).subscribe(product => {this.product = product});
     console.log(this.product);
 
+  }
+
+  public addCart(product: IProduct): void {
+    this.cartService.addItem(product);
   }
 
 }

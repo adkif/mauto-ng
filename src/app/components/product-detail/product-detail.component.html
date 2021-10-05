@@ -40,8 +40,8 @@
         </table>
       </div>
       <hr>
-      <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-      <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+      <button type="button" class="btn btn-primary btn-md mr-1 mb-2" (click)="addCart(product)" [routerLink]="['/cart']">Buy now</button>
+      <button type="button" class="btn btn-light btn-md mr-1 mb-2" (click)="addCart(product)"><i
           class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
     </div>
   </div>
