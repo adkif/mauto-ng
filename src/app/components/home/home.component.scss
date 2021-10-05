@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.ht {
+  display:grid;
+  place-items:center;
+  min-height:100vh;
+  background:#10121b;
+}
+.bo {
+  margin:0;
+  padding:0;
+}
+
+.logo{
+  color: white;
+  text-align: center;
+  font-size:400%;
+  margin-bottom: 3px;
+}
+$primary: rgb(1,157,230);
+
+button {
+  -webkit-appearance:  none;
+  width:  auto;
+  min-width:  100px;
+  border-radius:  24px;
+  text-align:  center;
+  padding:  15px 40px;
+  margin-top:  5px;
+  background-color:  saturate($primary, 30%);
+  color:  #fff;
+  font-size:  14px;
+  margin-left:  auto;
+  font-weight:  500;
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13);
+  border:  none;
+  transition:  all .3s ease;
+  outline: 0;
+  &:hover {
+    transform:  translateY(-3px);
+    box-shadow:  0 2px 6px -1px rgba($primary, .65);
+    &:active {
+      transform:  scale(.99);
+    }
+  }
+}
+
+.text{
+  color: white;
+  text-align: right;
+  font-size:x-large;
+  margin: 3px 3px 3px 3px;
+}
+
+#lightning_hero {
+  width:100vw;
+  max-width:1400px;
+  min-height:600px;
+  position:relative;
+  overflow:hidden;
+  background:url('https://contentservice.mc.reyrey.net/image_v1.0.0/?id=6b12695c-6e24-5f55-9333-36b22e0cd63b&637578115945454112'),
+    linear-gradient(to bottom, #012947, #014b7b);
+  font-family:'Roboto Condensed', sans-serif;
+  color:white;
+  text-align:center;
+}
+#lightning_hero video,
+.overlay {
+  height:100vh;
+  position:absolute;
+  left:0;
+  bottom:0;
+/*   mix-blend-mode:overlay;  */
+  opacity:1;
+}
+
+.overlay {
+ width:100%; background:url('https://contentservice.mc.reyrey.net/image_v1.0.0/?id=c0ebc376-4482-5e72-928d-4105db105a5a&637578074884879303');
+  opacity:0;
+  animation:flash 5s linear infinite;
+}
+@keyframes flash {
+  9% { opacity:0; }
+  10% { opacity:1; }
+  11% { opacity:0; }
+  49% { opacity:0; }
+  50% { opacity:1; }
+  51% { opacity:0; }
+  89% { opacity:0; }
+  90% { opacity:1; }
+  91% { opacity:0; }
+  92% { opacity:0; }
+  93% { opacity:1; }
+  94% { opacity:0; }
+}
+
+
+#lightning_hero p {
+  width:100%;
+  color:white;
+  font-size:28px;
+  letter-spacing:8px;
+  text-align:center;
+  margin:2vmin auto 0 auto;
+}
+
+#lightning_hero p span {
+  font-weight:bold;
+}
+
+#lightning_hero .tag_line {
+  max-width:350px;
+  font-size:21px;
+  letter-spacing:0;
+  margin:0 auto;
+}
+#lightning_hero .logo {
+  width:100%;
+  max-width:650px;
+  z-index:1;
+  transform:translateX(0%);
+  filter:drop-shadow(1px 1px 0px #888) brightness(1.25);
+}
+
+#lightning_hero .lineup {
+  width:1400px;
+  z-index:1;
+  display:block;
+  z-index:1;
+  position:relative;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  filter:drop-shadow(0 -5px 25px black);
+}

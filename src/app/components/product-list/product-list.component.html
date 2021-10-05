@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">One horizon</a>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" [(ngModel)]=search  [ngModelOptions]="{standalone: true}" placeholder="Search by name" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit"  [routerLink]="['search']" [queryParams]="{q: search }"  >Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Categories</h4>
+      <div *ngFor="let category of categories|async">
+        <div [routerLink]="['search']" [queryParams] = "{catId:category.id}"> {{category.name}}</div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

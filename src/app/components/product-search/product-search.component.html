@@ -1,0 +1,30 @@
+<div class="row" *ngFor="let product of products|async" >
+  <article class="card card-product-list mt-3">
+    <div class="card-body">
+    <div class="row">
+      <aside class="col-sm-3">
+        <a routerLink='/products/{{product.id}}' class="img-wrap"><img class="w-100" height="240" src="{{product.cover}}"></a>
+      </aside> <!-- col.// -->
+      <article class="col-sm-6">
+          <a routerLink='/products/{{product.id}}' class="title mt-2 h5">{{product.name}}</a>
+
+          <p>{{product.description}}</p>
+
+      </article> <!-- col.// -->
+      <aside class="col-sm-3">
+          <div class="price-wrap mt-2">
+            <span class="price h5"> {{product.price|currency}} </span>
+          </div> <!-- info-price-detail // -->
+
+          <p class="small text-success"> Free shipping </p>
+          <br>
+          <p>
+            <a routerLink='/products/{{product.id}}'  class="btn btn-light"> Details</a>
+          </p>
+          <br>
+      </aside> <!-- col.// -->
+    </div> <!-- row.// -->
+    </div> <!-- card-body .// -->
+  </article>
+
+</div>
